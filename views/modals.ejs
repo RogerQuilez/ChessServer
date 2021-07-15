@@ -1,0 +1,90 @@
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Seguro que quieres salir?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Selecciona "Salir" para cerrar sesión o "Cancelar" para mantenerte iniciado
+            </div>
+            <div class="modal-footer">
+                <form action="/logout" method="POST">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <input type="submit" value="Salir" class="btn btn-primary"></a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Profile Modal-->
+<div class="modal" id="profileModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mi perfil: </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6 picture">
+                        <center>
+                            <%if(!user[0]['profile_image']){%>
+                                <img class="img-profile rounded-circle" src="./img_profile/default.png">
+                                <%}else{%>
+                                    <img class="img-profile rounded-circle"
+                                        src="./img_profile/<%=user[0]['profile_image']%>.jpg">
+                                    <%}%>
+                        </center>
+                    </div>
+                    <div class="col-sm-6 details">
+                        <center>
+                            <p class="name"><b>Usuario: <%=user[0]['username']%></b></p>
+                            <p><b>ELO: <%=user[0]['elo']%></b></p>
+                        </center>
+                        <center>
+                            <br><b>Miembro desde,</b>
+                            <p>
+                                <%=new Date(user[0]['date_add']).toLocaleDateString()%>
+                            </p>
+                        </center>
+                        <center>
+                            <br><b>Registro de partidas:</b>
+                        </center>
+                    </div>
+                </div>
+                <table class="table">
+                    <tr>
+                        <td>
+                            <p><b>
+                                    <%=user[0]['wins']%>
+                                </b></p>
+                            <p>Partidas Ganadas</p>
+                        </td>
+                        <td>
+                            <p><b>
+                                    <%=user[0]['loses']%>
+                                </b></p>
+                            <p>Partidas Perdidas</p>
+                        </td>
+                        <td>
+                            <p><b>
+                                    <%=user[0]['tables']%>
+                                </b></p>
+                            <p>Tablas</p>
+                        </td>
+                    </tr>
+                </table>
+                <center><a href="/updateUser" class="waves-effect waves-light btn edit">Editar Perfil</a>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>

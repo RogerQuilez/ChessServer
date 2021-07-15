@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon"
+        href="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/chess_piece_king.png"
+        type="image/gif">
+
+    <title>Chess Online</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="./css/sb-admin-2.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <div id="tablero"></div>
+        <!-- Sidebar -->
+        <%- include('sidebar'); -%>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <%- include('topbar'); -%>
+
+                <div class="container-fluid">
+                    <!-- Boxes de Acoes -->
+                    <div id="info" class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="box">
+                            <div class="icon">
+                                <div class="image"><i class="far fa-thumbs-up"></i></div>
+                                <div class="info">
+                                    <h3 class="title">Todo lo que necesitas saber sobre el ajedrez</h3>
+                                    <p>
+                                        Estas lecciones te ayudarán a dominar todos los conceptos fundamentales del
+                                        ajedrez y a aumentar tu puntuación en cientos de puntos.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="space"></div>
+                        </div>
+                    </div>
+
+                    <div class="video-content">
+                        <iframe style='display:none' id='video' allow="autoplay" width='500' height='500' frameborder='0' allowfullscreen></iframe>
+                    </div>
+
+                    <!--Carousel Wrapper-->
+                    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                        <!--Controls-->
+                        <div class="controls-top">
+                            <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
+                                    class="fas fa-arrow-circle-left fa-2x"></i></a>
+
+                            <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
+                                    class="fas fa-arrow-circle-right fa-2x"></i></a>
+                        </div>
+                        <!--/.Controls-->
+
+                        <!--Indicators-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                            <li data-target="#multi-item-example" data-slide-to="1"></li>
+                            <li data-target="#multi-item-example" data-slide-to="2"></li>
+                        </ol>
+                        <!--/.Indicators-->
+
+                        <!--Slides-->
+                        <div class="carousel-inner" role="listbox">
+
+                            <!--First slide-->
+                            <div class="carousel-item active">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/196b7674-a498-11e8-8a03-2ba0e29ce59e.a6eebb8e.320x180o.3da7467224af.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 1</h4>
+                                                <p class="card-text">Conoce las piezas del ajedrez y cómo preparar el
+                                                    tablero. Te recomendamos este video si eres nuevo!</p>
+                                                <a class="btn btn-primary" id="video1">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/a62b2d2a-a556-11e8-8cfe-dbe33497853f.6ad09998.320x180o.9d49cda666df.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 2</h4>
+                                                <p class="card-text">Aprende las reglas básicas del ajedrez y cómo jugar
+                                                    una partida entera</p>
+                                                <a class="btn btn-primary" id="video2">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/8b85671c-3301-11ea-9ae6-a3fc3f097f32.ce4a5bbf.320x180o.0bd5a1ac6616.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 3</h4>
+                                                <p class="card-text">Consigue ventaja en las primeras jugadas y empieza
+                                                    comprendiendo las lógicas básicas</p>
+                                                <a class="btn btn-primary" id="video3">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--/.First slide-->
+
+                            <!--Second slide-->
+                            <div class="carousel-item">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/051cf994-a557-11e8-b0bd-ff5923bef851.09ec2cbe.320x180o.58bf8305e309.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 4</h4>
+                                                <p class="card-text">Acabar la partida con mate al oponente, amplia tus
+                                                    conocimientos con este video</p>
+                                                <a class="btn btn-primary" id="video4">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/92d05128-a557-11e8-ad38-475ed27c9163.9ec4fef7.320x180o.988f9e5fe915.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 5</h4>
+                                                <p class="card-text">Mantén los ojos bien abiertos, concentrate y
+                                                    captura muchas más piezas</p>
+                                                <a class="btn btn-primary" id="video5">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/eddee91c-a557-11e8-acf2-0b434852d6b5.04fe0a8e.320x180o.7c9054b1d83d.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 6</h4>
+                                                <p class="card-text">Ganar la partida concentrándose en el ataque contra
+                                                    el rey vulnerable.</p>
+                                                <a class="btn btn-primary" id="video6">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--/.Second slide-->
+
+                            <!--Third slide-->
+                            <div class="carousel-item">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/48c5489e-a558-11e8-83bc-7d5e2fdf19e9.40226029.320x180o.319ce0f66325.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 7</h4>
+                                                <p class="card-text">Consigue una buena posición haciendo buenas jugadas
+                                                    de apertura y mejora tus habilidades</p>
+                                                <a class="btn btn-primary" id="video7">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/a3aab820-a558-11e8-a44c-9b2b4abe4e06.976d5412.320x180o.f81bf88e4e39.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 8</h4>
+                                                <p class="card-text">Descubre la fuerza y la debilidad de cada pieza,
+                                                    video muy recomendado</p>
+                                                <a class="btn btn-primary" id="video8">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 clearfix d-none d-md-block">
+                                        <div class="card mb-2">
+                                            <img class="card-img-top"
+                                                src="https://images.chesscomfiles.com/uploads/v1/lesson_course/feae06a0-a558-11e8-9bea-d17363e894ed.e8569929.320x180o.de004fc8c3e6.png"
+                                                alt="Card image cap">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Leccion 9</h4>
+                                                <p class="card-text">Saber qué hacer cuando la mayoría de las piezas han
+                                                    salido del tablero</p>
+                                                <a class="btn btn-primary" id="video9">Ver video</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--/.Third slide-->
+
+                        </div>
+                        <!--/.Slides-->
+
+                    </div>
+                    <!--/.Carousel Wrapper-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <%- include('footer'); -%>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Modals-->
+    <%- include('modals'); -%>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

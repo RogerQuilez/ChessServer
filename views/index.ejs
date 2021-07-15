@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon"
+        href="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/chess_piece_king.png"
+        type="image/gif">
+
+    <title>Chess Online</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="./css/sb-admin-2.css" rel="stylesheet">
+    <link href="./css/carousel.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <%- include('sidebar'); -%>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <%- include('topbar'); -%>
+                <!-- End of Topbar -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <section class="wrapper">
+                            <div class="container-fostrap">
+                                <div>
+                                    <img src="img/logo.ico" class="fostrap-logo" />
+                                </div>
+                                <div class="content">
+                                    <div class="container">
+                                        <hr class="style9">
+                                        <br>
+                                        <div class="row">
+                                            
+                                            <!--CAROUSEL-->
+                                            <div class="col-xs-12 col-sm-4">
+                                                <div class="card">
+                                                    <a class="img-card"
+                                                        href="/aprender">
+                                                        <img src="img/card1.jpg" />
+                                                    </a>
+                                                    <div class="card-content">
+                                                        <h4 class="card-title">
+                                                        </h4>
+                                                    </div>
+                                                    <div class="card-read-more">
+                                                        <a href="/aprender"
+                                                            class="btn btn-link btn-block">
+                                                            Aprende a Jugar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <div class="card">
+                                                    <a class="img-card"
+                                                        href="/play">
+                                                        <img src="img/card2.jpg" />
+                                                    </a>
+                                                    <div class="card-content">
+                                                        <h4 class="card-title">
+                                                        </h4>
+                                                    </div>
+                                                    <div class="card-read-more">
+                                                        <a href="/play"
+                                                            class="btn btn-link btn-block">
+                                                            Jugar una partida
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4">
+                                                <div class="card">
+                                                    <a class="img-card"
+                                                        href="/chesstream">
+                                                        <img src="img/card3.jpg" />
+                                                    </a>
+                                                    <div class="card-content">
+                                                        <h4 class="card-title">
+                                                        </h4>
+                                                    </div>
+                                                    <div class="card-read-more">
+                                                        <a href="/chesstream"
+                                                            class="btn btn-link btn-block">
+                                                            Ver a otros profesionales
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="style9">
+                                        <br>
+
+                                        <section>
+                                            <div class="container">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6 order-lg-2">
+                                                        <div class="p-5"><img class="img-fluid rounded-circle" src="./img/section1.jpg" alt="..." /></div>
+                                                    </div>
+                                                    <div class="col-lg-6 order-lg-1">
+                                                        <div class="p-5">
+                                                            <h2 class="display-4">Mejora tus conocimientos</h2>
+                                                            <h4>Practica con los jugadores de nuestra comunidad para poder mejorar tus habilidades en el ajedrez.<br> ¡Vamos a que esperas!</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <div class="container">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6">
+                                                        <div class="p-5"><img class="img-fluid rounded-circle" src="./img/card2.jpg" alt="..." /></div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="p-5">
+                                                            <h2 class="display-4">Tutoriales!</h2>
+                                                            <h4>Gracias a los tutoriales que ponemos a disposición de los usuarios, podrás practicar y mejorar tu conocimiento con el Ajedrez</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <div class="container">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-6 order-lg-2">
+                                                        <div class="p-5"><img class="img-fluid rounded-circle" src="./img/card3.jpg" alt="..." /></div>
+                                                    </div>
+                                                    <div class="col-lg-6 order-lg-1">
+                                                        <div class="p-5">
+                                                            <h2 class="display-4">Streamers</h2>
+                                                            <h4>También podrás ver jugar a los mejores jugadores de Ajedrez en directo, grácias a nuestro apartado de ChesStream</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <%- include('footer'); -%>
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!--Modals-->
+    <%- include('modals'); -%>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

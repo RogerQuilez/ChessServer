@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon"
+        href="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/chess_piece_king.png"
+        type="image/gif">
+
+    <title>Chess Online</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="./css/sb-admin-2.css" rel="stylesheet">
+    <script src="./juego/app.js" type="module"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <div id="tablero"></div>
+        <!-- Sidebar -->
+        <%- include('sidebar'); -%>
+            <!-- End of Sidebar -->
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <%- include('topbar'); -%>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <!-- Area Chart -->
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div
+                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold text-primary">Modificar mis datos: </h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div class="chart-area">
+                                                <form action="/updateUser" method="POST">
+                                                    <div class="form-group">
+                                                        <h4>Contraseña: </h4>
+                                                        <input type="password" class="form-control form-control-user"
+                                                            name="password" placeholder="Modificar mi Contraseña">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <h4 class="datos">Nombre: <%=user[0]['name']%>
+                                                        </h4>
+                                                        <input type="text" class="form-control form-control-user"
+                                                            name="name" placeholder="Modificar mi Nombre">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <h4 class="datos">Apellidos: <%=user[0]['lastname']%>
+                                                        </h4>
+                                                        <input type="text" class="form-control form-control-user"
+                                                            name="lastname" placeholder="Modificar mis apellidos">
+                                                    </div>
+                                                    <div class="form-group">
+                                                    </div>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal"
+                                                        data-target="#updateModal">
+                                                        <i class="fas fa-user-edit"></i></i>
+                                                        Modificar mis datos
+                                                    </a>
+                                                    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                                        Seguro
+                                                                        que
+                                                                        quieres modificar tus datos?</h5>
+                                                                    <button class="close" type="button"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">×</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">Escribe tu contraseña actual
+                                                                    para
+                                                                    confirmar los cambios o Cancela para anularlos
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <div class="form-footer">
+                                                                        <input style="margin-left:-60%;" type="password"
+                                                                            class="form-control form-control-user"
+                                                                            name="passwordConfirm"
+                                                                            placeholder="Contraseña actual">
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button class="btn btn-secondary" type="button"
+                                                                            data-dismiss="modal">Cancelar</button>
+                                                                        <input type="submit" value="Confirmar cambios"
+                                                                            class="btn btn-primary"></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Donut Chart -->
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Modificar imagen de perfil
+                                            </h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <form method="POST" action="/updateImage" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <div class="col-sm-6 picture">
+                                                        <center style="padding-left:72%;">
+                                                            <%if(!user[0]['profile_image']){%>
+                                                                <img class="img-profile rounded-circle"
+                                                                    src="./img_profile/default.png">
+                                                                <%}else{%>
+                                                                    <img class="img-profile rounded-circle"
+                                                                        src="./img_profile/<%=user[0]['profile_image']%>.jpg">
+                                                                    <%}%>
+                                                        </center>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group" style="padding-top: 4%;">
+                                                    <input type="file" name="file" class="form-control" />
+                                                    <input style="margin-left: 40%; margin-top: 5%;" type="submit"
+                                                        value="Subir Imagen" class="btn btn-primary"
+                                                        href="updateUser.html">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <%- include('footer'); -%>
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Modals-->
+        <%- include('modals'); -%>
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

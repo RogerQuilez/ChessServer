@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.2",
+    "socket.io-client": "^4.0.2"
+  },
+  "devDependencies": {
+    "ip": "^1.1.5",
+    "parcel-bundler": "^1.12.5"
+  }
+}

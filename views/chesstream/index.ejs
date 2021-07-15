@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Chess Online</title>
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="https://img.icons8.com/nolan/64/vagina.png" type="image/gif">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
+    <link rel="stylesheet" href="http://codemirror.net/addon/dialog/dialog.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="/index">Chess<em> Online</em></a>
+        </div>
+        <div class="menu-icon">
+            <a id="buscador"><span>-----</span></a>
+        </div>
+    </nav>
+
+    <div id="video-container">
+        <div class="video-overlay"></div>
+        <div class="video-content">
+            <iframe style='display:none' id='video' width='1920' height='970' frameborder='0' allowfullscreen></iframe>
+            <div class="inner">
+                <h1>CHES<em>STREAM</em></h1>
+                <p>Aprende de tus</p>
+                <p>Streamers favoritos</p>
+                <div class="scroll-icon">
+                    <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <video autoplay="" loop="" muted>
+            <source src="intro.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="full-screen-portfolio" id="portfolio">
+        <div class="container-fluid">
+            <div class="mb-4">
+                <!-- Gradient divider -->
+                <h1 style="text-align: center; color:#DBDBDB">Nuestras recomendaciones</h1>
+                <hr data-content="AND" class="hr-text">
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>Anna Chess</h1>
+                                <p>Chess broadcaster and variety streamer. Lipstick maniac. Former Olympian, Chess
+                                    Grandmaster</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img1" src="img/video1.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>GMHikaru</h1>
+                                <p>Grandmaster Hikaru Nakamura, 5-time United States Chess Champion</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img2" src="img/video2.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>Reydama</h1>
+                                <p>Juanjogameplay jugador de Ajedrezz videojuegos pc y android</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img3" src="img/video3.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>xntentacion</h1>
+                                <p>No info</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img4" src="img/video4.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>GothamChess
+                                </h1>
+                                <p>Hi, I’m Levy. Or Harry Potter, Elijah Wood, Rami Malek...</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img5" src="img/video5.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>chessbrah </h1>
+                                <p>Pushing the boundaries of chess entertainment...</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img6" src="img/video6.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>GMNaroditsky</h1>
+                                <p>GMNaroditsky transmite Chess.</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img7" src="img/video7.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1>AnnaCramling</h1>
+                                <p>Hey I’m Anna! I stream chess and try to spread as much happiness as possible :)</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img8" src="img/video8.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="portfolio-item">
+                    <div class="thumb">
+                        <div class="hover-effect">
+                            <div class="hover-content">
+                                <h1 id="actriz">AlessiaSanteramo</h1>
+                                <p>Ciao, I'm Alessia from Italy. I love chess and I want to spread a fun and positive
+                                    image of chess</p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img id="img9" src="img/video9.png">
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="recomendacion">
+                <div id="clips-display"></div>
+            </div>
+            <footer>
+                <div class="container-fluid">
+                    <div class="col-md-12">
+                        <p>Chess Online &copy; 2021
+
+                            | Designed by ChessTeam</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+</body>
+
+</html>
